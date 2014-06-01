@@ -3,17 +3,6 @@ package com.sherlock.communitydeed;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -31,6 +20,7 @@ import com.facebook.*;
 import com.facebook.model.*;
 
 import com.sherlock.communitydeed.HttpPostAsyncTask;
+import com.sherlock.communitydeed.CreateDeedActivity;
 
 public class MainActivity extends Activity {
     
@@ -68,25 +58,11 @@ public class MainActivity extends Activity {
             }
         });
         
-        // Add code to print out the key hash
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo("com.sherlock.communitydeed", 
-                    PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
-        }
-        
         Log.i(TAG, Session.getActiveSession().getAccessToken());
         new HttpPostAsyncTask().execute("fb_access_token", Session.getActiveSession().getAccessToken());
         
-        // Start 
+        deedCreateActivity();
+        
     }
 
     @Override
@@ -102,4 +78,25 @@ public class MainActivity extends Activity {
         Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
     }
     
+    public void printKeyHash() {
+     // Add code to print out the key hash
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.sherlock.communitydeed", 
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+    }
+    
+    public void deedCreateActivity() {
+        startActivity(new Intent(this, CreateDeedActivity.class));
+    }
+
 }

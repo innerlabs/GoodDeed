@@ -228,7 +228,9 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f04001e;
+        public static final int DeedRelativeLayout=0x7f040020;
+        public static final int StoryEditRelativeLayout=0x7f04001e;
+        public static final int action_settings=0x7f040027;
         public static final int com_facebook_body_frame=0x7f040016;
         public static final int com_facebook_button_xout=0x7f040018;
         public static final int com_facebook_login_activity_progress_bar=0x7f040006;
@@ -254,9 +256,16 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f04001d;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f04001b;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f04001c;
+        public static final int create_cancel=0x7f040026;
+        public static final int create_confirm=0x7f040025;
+        public static final int deed_create_desc=0x7f040023;
+        public static final int deed_create_desc_value=0x7f040024;
+        public static final int deed_create_title=0x7f040021;
+        public static final int deed_create_title_value=0x7f040022;
         public static final int large=0x7f040002;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f040013;
+        public static final int scrollView1=0x7f04001f;
         public static final int small=0x7f040000;
         public static final int welcome=0x7f040003;
     }
@@ -277,6 +286,7 @@ containing a value of this type.
         public static final int com_facebook_search_bar_layout=0x7f03000d;
         public static final int com_facebook_tooltip_bubble=0x7f03000e;
         public static final int com_facebook_usersettingsfragment=0x7f03000f;
+        public static final int create_deed=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -311,6 +321,12 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f070008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
+        public static final int create_button_cancel=0x7f07001f;
+        public static final int create_button_confirm=0x7f07001e;
+        public static final int deed_create_desc=0x7f070022;
+        public static final int deed_create_desc_value=0x7f070023;
+        public static final int deed_create_title=0x7f070020;
+        public static final int deed_create_title_value=0x7f070021;
         public static final int hello_world=0x7f07001c;
     }
     public static final class style {
