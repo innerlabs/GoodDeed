@@ -9,6 +9,9 @@ import android.app.Activity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -47,8 +50,8 @@ public class MainActivity extends Activity {
                         public void onCompleted(GraphUser user, Response response) {
                             Log.i(TAG, "Completed newMeRequest");
                             if (user != null) {
-                                TextView welcome = (TextView) findViewById(R.id.welcome);
-                                welcome.setText("Hello " + user.getName() + "!");
+                                //TextView welcome = (TextView) findViewById(R.id.welcome);
+                                //welcome.setText("Hello " + user.getName() + "!");
                             }
                         }
                     }).executeAsync();
@@ -60,8 +63,17 @@ public class MainActivity extends Activity {
         
         Log.i(TAG, Session.getActiveSession().getAccessToken());
         new HttpPostAsyncTask().execute("fb_access_token", Session.getActiveSession().getAccessToken());
+
+        // Create a Good Deed 
+        Button btnCreate = (Button) findViewById(R.id.deed_main_create);
+        btnCreate.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deedCreateActivity();
+            }
+        });
+
         
-        deedCreateActivity();
         
     }
 
