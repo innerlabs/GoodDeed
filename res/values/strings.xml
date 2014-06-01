@@ -8,11 +8,15 @@
     <string name="create_button_confirm">Create</string>
     <string name="create_button_cancel">Cancel</string>
     
+    <string name="deed_main_create">Enter a Good Deed</string>
+    
     <string name="deed_create_title">Title</string>
     <string name="deed_create_title_value"></string>
     <string name="deed_create_desc">Description</string>
     <string name="deed_create_desc_value"></string>
     <string name="deed_create_donation">Sponsored Amount</string>
     <string name="deed_create_donation_value"></string>
+    <string name="create_deed_media">Attach Photos</string>
+    <string name="create_deed_media_value"></string>
 
 </resources>

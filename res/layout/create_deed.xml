@@ -79,6 +79,15 @@
                 android:layout_alignParentRight="true"
                 android:ems="8"
                 android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/create_deed_media"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/editText1"
+                android:layout_marginTop="14dp"
+                android:text="@string/create_deed_media" />
             
         </RelativeLayout>
 

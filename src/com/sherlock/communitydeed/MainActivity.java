@@ -78,6 +78,11 @@ public class MainActivity extends Activity {
         Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
     }
     
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+    
     public void printKeyHash() {
      // Add code to print out the key hash
         try {
