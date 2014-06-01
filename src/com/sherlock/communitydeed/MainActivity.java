@@ -1,6 +1,8 @@
 package com.sherlock.communitydeed;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +17,20 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
+
 import com.facebook.*;
 import com.facebook.model.*;
+
+import com.sherlock.communitydeed.HttpPostAsyncTask;
 
 public class MainActivity extends Activity {
     
@@ -45,17 +55,38 @@ public class MainActivity extends Activity {
                         // callback after Graph API response with user object
                         @Override
                         public void onCompleted(GraphUser user, Response response) {
+                            Log.i(TAG, "Completed newMeRequest");
                             if (user != null) {
                                 TextView welcome = (TextView) findViewById(R.id.welcome);
                                 welcome.setText("Hello " + user.getName() + "!");
                             }
                         }
                     }).executeAsync();
+                } else {
+                    Log.i(TAG, "session.isOpened() == false");
                 }
             }
         });
         
+        // Add code to print out the key hash
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.sherlock.communitydeed", 
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+        
         Log.i(TAG, Session.getActiveSession().getAccessToken());
+        new HttpPostAsyncTask().execute("fb_access_token", Session.getActiveSession().getAccessToken());
+        
+        // Start 
     }
 
     @Override
@@ -71,25 +102,4 @@ public class MainActivity extends Activity {
         Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
     }
     
-    public void postData() {
-        // Create a new HttpClient and Post Header
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost("http://battlehack.172.19.38.31.xip.io/");
-
-        try {
-            // Add your data
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("fb_access_token", Session.getActiveSession().getAccessToken()));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
-            // Execute HTTP Post Request
-            HttpResponse response = httpclient.execute(httppost);
-            
-        } catch (ClientProtocolException e) {
-            // TODO Auto-generated catch block
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-        }
-    } 
-
 }
