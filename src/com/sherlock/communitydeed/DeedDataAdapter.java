@@ -47,7 +47,7 @@ public class DeedDataAdapter extends ArrayAdapter<DeedData> {
             
             KEY_IDTV.setText("" + title);
             titleTV.setText("Sponsorship: $" + donation);
-            donationTV.setText("Image:" + item.mImgUri);
+            donationTV.setText("Sponsors: " + item.mImgUri);
             Log.i("DeedDataAdapter", title);
             
         } catch (Exception e) {

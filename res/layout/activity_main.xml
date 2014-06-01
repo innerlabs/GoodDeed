@@ -17,10 +17,9 @@
         <Button
             android:id="@+id/deed_main_create"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_height="68dp"
+            android:layout_weight="0.95"
             android:text="@string/deed_main_create" />
-
     </LinearLayout>
 
     <ListView

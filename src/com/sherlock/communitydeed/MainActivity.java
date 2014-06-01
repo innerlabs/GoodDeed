@@ -157,17 +157,17 @@ public class MainActivity extends Activity {
     private void createDummyDeedList() {
         DeedData deed = new DeedData(1, "Clear garbage in McCleary Park", 
                 "Our kids play there often but lately there's been more garbage because of increased park events. Let's keep it clean!", 
-                5.00, "/img/IMG_2001.jpg", 56.3235, -79.5821);
+                50.00, "10", 56.3235, -79.5821);
         DeedDataList.add(deed);
         
         deed = new DeedData(2, "Shovel snow off walking path through Battle Park", 
                 "In the spring/summer, lots of people cut through this park to save time getting to TTC but in winter the path is blocked by snow.", 
-                10.00, "/img/IMG_4954.jpg", 100.7321, 38.2578);
+                30.00, "5", 100.7321, 38.2578);
         DeedDataList.add(deed);
         
         deed = new DeedData(3, "Rake the gravel in dog park", 
                 "Some reckless adults have been racing their Big Wheels in the dog park, causing all the gravel to clump at the sides.", 
-                7.00, "/img/IMG_0009.jpg", 90.6543, 15.0052);
+                7.00, "1", 90.6543, 15.0052);
         DeedDataList.add(deed);
     }
 
