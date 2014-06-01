@@ -8,7 +8,7 @@
     <string name="create_button_confirm">Create</string>
     <string name="create_button_cancel">Cancel</string>
     
-    <string name="deed_main_create">Enter a Good Deed</string>
+    <string name="deed_main_create">Propose a Good Deed</string>
     
     <string name="deed_create_title">Title</string>
     <string name="deed_create_title_value"></string>

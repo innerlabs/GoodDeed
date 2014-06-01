@@ -3,6 +3,7 @@ package com.sherlock.communitydeed;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -25,9 +27,13 @@ import com.facebook.model.*;
 import com.sherlock.communitydeed.HttpPostAsyncTask;
 import com.sherlock.communitydeed.CreateDeedActivity;
 
+
 public class MainActivity extends Activity {
     
     public static final String TAG = "GoodDeed";
+    
+    ArrayList<DeedData> DeedDataList;
+    private DeedDataAdapter deedAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +78,12 @@ public class MainActivity extends Activity {
                 deedCreateActivity();
             }
         });
-
         
+        ListView deedList = (ListView) findViewById(R.id.deed_list);
+        DeedDataList = new ArrayList<DeedData>();
+        createDummyDeedList();
+        deedAdapter = new DeedDataAdapter(this, R.layout.deed_item_view, DeedDataList);
+        deedList.setAdapter(deedAdapter);
         
     }
 
@@ -114,6 +124,23 @@ public class MainActivity extends Activity {
     
     public void deedCreateActivity() {
         startActivity(new Intent(this, CreateDeedActivity.class));
+    }
+    
+    private void createDummyDeedList() {
+        DeedData deed = new DeedData(1, "Clear garbage in McCleary Park", 
+                "Our kids play there often but lately there's been more garbage because of increased park events. Let's keep it clean!", 
+                5.00, "/img/IMG_2001.jpg", 56.3235, -79.5821);
+        DeedDataList.add(deed);
+        
+        deed = new DeedData(2, "Shovel snow off walking path through Battle Park", 
+                "In the spring/summer, lots of people cut through this park to save time getting to TTC but in winter the path is blocked by snow.", 
+                10.00, "/img/IMG_4954.jpg", 100.7321, 38.2578);
+        DeedDataList.add(deed);
+        
+        deed = new DeedData(3, "Rake the gravel in dog park", 
+                "Some reckless adults have been racing their Big Wheels in the dog park, causing all the gravel to clump at the sides.", 
+                7.00, "/img/IMG_0009.jpg", 90.6543, 15.0052);
+        DeedDataList.add(deed);
     }
 
 }

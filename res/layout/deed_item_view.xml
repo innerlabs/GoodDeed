@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?> 
+  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+         android:id="@+id/deed_row_KEY_ID"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:textSize="16sp"
+         android:text="KEY_ID"
+         android:textStyle="bold" />
+
+    <TextView
+         android:id="@+id/deed_row_title"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingLeft="20dp"
+         android:text="title"
+         android:textSize="16sp"
+         android:layout_below="@+id/deed_row_KEY_ID"
+         />
+    <TextView
+         android:id="@+id/deed_row_donation"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingLeft="20dp"
+         android:text="donation"
+         android:textSize="16sp"
+         android:layout_below="@+id/deed_row_title"
+         />
+    
+</RelativeLayout>
