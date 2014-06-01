@@ -12,9 +12,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -84,6 +87,31 @@ public class MainActivity extends Activity {
         createDummyDeedList();
         deedAdapter = new DeedDataAdapter(this, R.layout.deed_item_view, DeedDataList);
         deedList.setAdapter(deedAdapter);
+        
+        deedList.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                    int position, long id) {
+
+                DeedData selectedDeed = DeedDataList.get(position);
+                
+                // Create Intent for ViewDeedActivity
+                Intent intentViewDeed = new Intent(MainActivity.this, ViewDeedActivity.class);
+
+                // Stuff selected DeedData into Intent extra data
+                intentViewDeed.putExtra(selectedDeed.TITLE, selectedDeed.mTitle);
+                intentViewDeed.putExtra(selectedDeed.DESC, selectedDeed.mDesc);
+                intentViewDeed.putExtra(selectedDeed.DONATION, selectedDeed.mDonation);
+                intentViewDeed.putExtra(selectedDeed.IMGURI, selectedDeed.mImgUri);
+                intentViewDeed.putExtra(selectedDeed.LATITUDE, selectedDeed.mLat);
+                intentViewDeed.putExtra(selectedDeed.LONGITUDE, selectedDeed.mLon);
+                
+                // Start Activity
+                startActivity(intentViewDeed);
+                
+            }
+
+        });
         
     }
 

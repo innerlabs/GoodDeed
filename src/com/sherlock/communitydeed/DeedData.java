@@ -2,6 +2,13 @@ package com.sherlock.communitydeed;
 
 public class DeedData {
     
+    public static final String TITLE = "deed_title";
+    public static final String DESC = "deed_desc";
+    public static final String DONATION = "deed_donation";
+    public static final String IMGURI = "deed_imguri";
+    public static final String LATITUDE = "deed_latitude";
+    public static final String LONGITUDE = "deed_longitude";
+    
     public long   KEY_ID;
     public String mTitle;
     public String mDesc;

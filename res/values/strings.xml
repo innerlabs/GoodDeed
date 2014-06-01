@@ -14,9 +14,19 @@
     <string name="deed_create_title_value"></string>
     <string name="deed_create_desc">Description</string>
     <string name="deed_create_desc_value"></string>
-    <string name="deed_create_donation">Sponsored Amount</string>
+    <string name="deed_create_donation">Committed Donation</string>
     <string name="deed_create_donation_value"></string>
     <string name="create_deed_media">Attach Photos</string>
     <string name="create_deed_media_value"></string>
+    
+    <string name="deed_view_title">Title</string>
+    <string name="deed_view_title_value"></string>
+    <string name="deed_view_desc">Description</string>
+    <string name="deed_view_desc_value"></string>
+    <string name="deed_view_donation">Committed Donation</string>
+    <string name="deed_view_donation_value"></string>
+    
+    <string name="deed_view_commit_to_donate">Commit to Donate</string>
+    <string name="deed_view_commit_to_do">Commit to Do</string>
 
 </resources>

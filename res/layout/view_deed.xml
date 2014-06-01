@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/StoryEditRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp" >
+
+        <RelativeLayout
+            android:id="@+id/DeedRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="356dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/deed_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/deed_view_title_value"
+                android:layout_alignParentLeft="true"
+                android:text="@string/deed_view_title" />
+
+            <EditText
+                android:id="@+id/deed_view_title_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:ems="12"
+                android:text="@string/deed_view_title_value" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/deed_view_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/deed_view_title"
+                android:layout_marginTop="22dp"
+                android:text="@string/deed_view_desc" />
+
+            <EditText
+                android:id="@+id/deed_view_desc_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/deed_view_desc"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:text="@string/deed_view_title_value" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/deed_view_donation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/deed_view_desc_value"
+                android:layout_marginTop="17dp"
+                android:text="@string/deed_view_donation" />
+
+            <EditText
+                android:id="@+id/deed_view_donation_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/deed_view_donation"
+                android:layout_alignBottom="@+id/deed_view_donation"
+                android:layout_alignParentRight="true"
+                android:ems="8"
+                android:inputType="numberDecimal" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deed_view_donation_value"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@+id/deed_view_title"
+                android:src="@drawable/ic_launcher" />
+            
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/deed_view_donate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/deed_view_commit_to_donate" />
+
+    <Button
+        android:id="@+id/deed_view_do"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/deed_view_commit_to_do" />
+
+</RelativeLayout>

@@ -230,7 +230,7 @@ containing a value of this type.
     public static final class id {
         public static final int DeedRelativeLayout=0x7f040022;
         public static final int StoryEditRelativeLayout=0x7f040020;
-        public static final int action_settings=0x7f04002f;
+        public static final int action_settings=0x7f040038;
         public static final int com_facebook_body_frame=0x7f040018;
         public static final int com_facebook_button_xout=0x7f04001a;
         public static final int com_facebook_login_activity_progress_bar=0x7f040008;
@@ -269,8 +269,17 @@ containing a value of this type.
         public static final int deed_row_KEY_ID=0x7f04002c;
         public static final int deed_row_donation=0x7f04002e;
         public static final int deed_row_title=0x7f04002d;
+        public static final int deed_view_desc=0x7f040031;
+        public static final int deed_view_desc_value=0x7f040032;
+        public static final int deed_view_do=0x7f040037;
+        public static final int deed_view_donate=0x7f040036;
+        public static final int deed_view_donation=0x7f040033;
+        public static final int deed_view_donation_value=0x7f040034;
         public static final int deed_view_main=0x7f040003;
+        public static final int deed_view_title=0x7f04002f;
+        public static final int deed_view_title_value=0x7f040030;
         public static final int editText1=0x7f040028;
+        public static final int imageView1=0x7f040035;
         public static final int large=0x7f040002;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f040015;
@@ -296,6 +305,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment=0x7f03000f;
         public static final int create_deed=0x7f030010;
         public static final int deed_item_view=0x7f030011;
+        public static final int view_deed=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -341,6 +351,14 @@ containing a value of this type.
         public static final int deed_create_title=0x7f070021;
         public static final int deed_create_title_value=0x7f070022;
         public static final int deed_main_create=0x7f070020;
+        public static final int deed_view_commit_to_do=0x7f070030;
+        public static final int deed_view_commit_to_donate=0x7f07002f;
+        public static final int deed_view_desc=0x7f07002b;
+        public static final int deed_view_desc_value=0x7f07002c;
+        public static final int deed_view_donation=0x7f07002d;
+        public static final int deed_view_donation_value=0x7f07002e;
+        public static final int deed_view_title=0x7f070029;
+        public static final int deed_view_title_value=0x7f07002a;
         public static final int hello_world=0x7f07001c;
     }
     public static final class style {
