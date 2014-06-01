@@ -12,5 +12,7 @@
     <string name="deed_create_title_value"></string>
     <string name="deed_create_desc">Description</string>
     <string name="deed_create_desc_value"></string>
+    <string name="deed_create_donation">Sponsored Amount</string>
+    <string name="deed_create_donation_value"></string>
 
 </resources>

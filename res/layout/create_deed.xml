@@ -61,6 +61,25 @@
                 <requestFocus />
             </EditText>
 
+            <TextView
+                android:id="@+id/deed_create_donation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/deed_create_desc_value"
+                android:layout_marginTop="17dp"
+                android:text="@string/deed_create_donation" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/deed_create_donation"
+                android:layout_alignBottom="@+id/deed_create_donation"
+                android:layout_alignParentRight="true"
+                android:ems="8"
+                android:inputType="numberDecimal" />
+            
         </RelativeLayout>
 
     </ScrollView>
